@@ -35,14 +35,6 @@
             <Path fileType="data">/usr/share/themes/lxqt</Path>
         </Files>
         <AdditionalFiles>
-        <!--    <AdditionalFile permission="0644" owner="root" target="/usr/share/desktop-directories/lxqt-settings.directory">lxqt-settings.directory</AdditionalFile>
-            <AdditionalFile permission="0644" owner="root" target="/usr/share/desktop-directories/lxqt-leave.directory">lxqt-leave.directory</AdditionalFile>
-            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/connection-editor.desktop">nm-connection-editor.desktop</AdditionalFile>-->
-<!--    Customizations for Pisi          -->
-           <!-- <AdditionalFile permission="0644" owner="root" target="/etc/pcmanfm-qt/lxqt/settings.conf">settings.conf</AdditionalFile>
-            <AdditionalFile permission="0644" owner="root" target="/etc/lxqt/session.conf">session.conf</AdditionalFile>
-            <AdditionalFile permission="0644" owner="root" target="/etc/lxqt/lxqt.conf">lxqt.conf</AdditionalFile>
-            <AdditionalFile permission="0644" owner="root" target="/etc/lxqt/panel.conf">panel.conf</AdditionalFile>-->
 <!--  Adds pisi startup icon to Themes  -->
             <AdditionalFile permission="0644" owner="root" target="/usr/share/lxqt/themes/ambiance/mainmenu.svg">mainmenu.svg</AdditionalFile>
             <AdditionalFile permission="0644" owner="root" target="/usr/share/lxqt/themes/dark/mainmenu.svg">mainmenu.svg</AdditionalFile>

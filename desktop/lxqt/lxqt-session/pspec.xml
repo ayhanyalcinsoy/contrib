@@ -45,6 +45,17 @@
             <Path fileType="data">/usr/share/</Path>
             <Path fileType="config">/etc</Path>
         </Files>
+        <AdditionalFiles>
+            <AdditionalFile permission="0644" owner="root" target="/etc/lxqt/session.conf">session.conf</AdditionalFile>
+            <AdditionalFile permission="0644" owner="root" target="/etc/lxqt/lxqt.conf">lxqt.conf</AdditionalFile>
+            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/lxqt-lockscreen.desktop">lxqt-lockscreen.desktop</AdditionalFile>
+            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/lxqt-reboot.desktop">lxqt-reboot.desktop</AdditionalFile>
+            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/lxqt-suspend.desktop">lxqt-suspend.desktop</AdditionalFile>
+            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/lxqt-hibernate.desktop">lxqt-hibernate.desktop</AdditionalFile>
+            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/lxqt-logout.desktop">lxqt-logout.desktop</AdditionalFile>
+            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/lxqt-shutdown.desktop">lxqt-shutdown.desktop</AdditionalFile>
+
+        </AdditionalFiles>
     </Package>
     <History>
         <Update release="2">

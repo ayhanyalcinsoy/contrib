@@ -15,6 +15,8 @@ def setup():
                                          -DCMAKE_INSTALL_LIBDIR=/usr/lib\
                                          -DCMAKE_BUILD_TYPE=Release \
                                          -DNOSECRETSUPPORT=false \
+                                         -DQT5=true \
+                                         -DBUILD_SHARED=true \
                                          -DNOKDESUPPORT=false", sourceDir="..")
 def build():
     shelltools.cd("build")

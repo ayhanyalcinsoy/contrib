@@ -28,6 +28,7 @@
             <Dependency>qt5-linguist</Dependency>
             <Dependency>qt5-x11extras-devel</Dependency>
             <Dependency>kwindowsystem-devel</Dependency>
+            <Dependency>libexif-devel</Dependency>
             <Dependency versionFrom="0.4.0">lxqt-build-tools</Dependency>
         </BuildDependencies>
     </Source>
@@ -54,8 +55,7 @@
             
         </Files>
         <AdditionalFiles>
-            <!--<AdditionalFile permission="0644" owner="root" target="/usr/share/applications/pcmanfm-qt-desktop-pref.desktop">pcmanfm-qt-desktop-pref.desktop</AdditionalFile>
-            <AdditionalFile permission="0644" owner="root" target="/usr/share/applications/pcmanfm-qt.desktop">pcmanfm-qt.desktop</AdditionalFile>-->
+            <AdditionalFile permission="0644" owner="root" target="/etc/pcmanfm-qt/lxqt/settings.conf">settings.conf</AdditionalFile>
         </AdditionalFiles>
     </Package>
 
