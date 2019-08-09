@@ -5,19 +5,23 @@
 # See the file http://www.gnu.org/copyleft/gpl.txt.
 
 from pisi.actionsapi import autotools
-from pisi.actionsapi import get
 from pisi.actionsapi import pisitools
+from pisi.actionsapi import get
 
 def setup():
-    autotools.configure()
+	pisitools.dosed("configure", "pavucontrol", "pavucontrol-qt")
+	autotools.configure("--prefix=/usr")
 
-    pisitools.dosed("libtool", " -shared ", " -Wl,--as-needed -shared ")
+	pisitools.dosed("libtool", " -shared ", " -Wl,--as-needed -shared ")
 
 def build():
-    autotools.make()
+	autotools.make()
 
 def install():
-    autotools.rawInstall("DESTDIR=%s" % get.installDIR())
+	autotools.rawInstall("DESTDIR=%s" % get.installDIR())
 
-    pisitools.dodoc("AUTHORS", "ChangeLog", "COPYING", "NEWS", "README")
-
+	pisitools.dodoc("AUTHORS", \
+	"ChangeLog", \
+	"COPYING", \
+	"NEWS", \
+	"README")
