@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<!DOCTYPE PISI SYSTEM "https://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
 <PISI>
     <Source>
         <Name>python-pyxattr</Name>
@@ -8,6 +8,7 @@
             <Name>PisiLinux Community</Name>
             <Email>admins@pisilinux.org</Email>
         </Packager>
+        <PartOf>programming.language.python</PartOf>
         <License>GPL</License>
         <IsA>library</IsA>
         <Summary>Python extension for extended file attributes</Summary>
@@ -23,8 +24,8 @@
         <Name>python-pyxattr</Name>
         <Summary>Python extension for extended file attributes</Summary>
         <Files>
-            <Path fileType="library">/usr/lib</Path>
-            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="library">/usr/lib/python2*</Path>
+            <Path fileType="doc">/usr/share/doc/python-pyxattr</Path>
         </Files>
     </Package>
 

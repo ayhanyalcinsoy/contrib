@@ -1,7 +1,8 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 # Licensed under the GNU General Public License, version 3.
-# See the file https://www.gnu.org/licenses/gpl.txt
+# See the file https://www.gnu.org/licenses/gpl-3.0.txt
 
 from pisi.actionsapi import shelltools
 from pisi.actionsapi import pisitools
@@ -10,7 +11,6 @@ from pisi.actionsapi import get
 def setup():
 	shelltools.system("sed -i '91a\ \ GtkMenuBar::window-dragging\ =\ 1' src/gtk2/main.rc.in")
 	shelltools.system("sed -i '92a\ \ GtkToolbar::window-dragging\ =\ 1' src/gtk2/main.rc.in")
-#	shelltools.system("sed -i '41s/\#\#/#/' src/gtk2/gtkrc.in")
 
 	shelltools.system("\
 	meson \
