@@ -13,9 +13,7 @@
         <IsA>app:gui</IsA>
         <Summary>The Lumina Desktop Environment is a lightweight system interface designed for use on any Unix-like operating system.</Summary>
         <Description>The Lumina Desktop Environment is a lightweight system interface designed for use on any Unix-like operating system.</Description>
-        <Archive sha1sum="5694be83131183ebe1b9402bcf6f30913d72749c" type="targz">
-            https://github.com/lumina-desktop/lumina/archive/v1.5.0.tar.gz
-        </Archive>
+        <Archive sha1sum="26fa7726aff964777464de5cd658b34d9c25a871" type="targz">https://github.com/lumina-desktop/lumina/archive/v1.6.0.tar.gz</Archive>
         <BuildDependencies>
             <Dependency versionFrom="5.7.1">qt5-base-devel</Dependency>
             <Dependency versionFrom="5.7.1">qt5-multimedia-devel</Dependency>
@@ -31,24 +29,49 @@
             <Dependency>libXcomposite-devel</Dependency>
             <Dependency>libXdamage-devel</Dependency>
             <Dependency>libXrender-devel</Dependency>
+            <Dependency>libXcursor-devel</Dependency>
             <Dependency>desktop-file-utils</Dependency>
         </BuildDependencies>
     </Source>
+    
+    <Package>
+        <Name>lumina-archiver</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-archiver</Path>
+            <Path fileType="data">/usr/share/applications/lumina-archiver.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-archiver*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-archiver.1.gz</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>lumina-config</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-config</Path>
+            <Path fileType="data">/usr/share/applications/lumina-config.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-config*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-config.1.gz</Path>
+        </Files>
+    </Package>
 
     <Package>
         <Name>lumina-desktop</Name>
         <RuntimeDependencies>
-            <Dependency>libgcc</Dependency>
             <Dependency>libxcb</Dependency>
-            <Dependency>qt5-svg</Dependency>
-            <Dependency>qt5-base</Dependency>
             <Dependency>xcb-util</Dependency>
             <Dependency>libXdamage</Dependency>
             <Dependency>xcb-util-wm</Dependency>
             <Dependency>qt5-x11extras</Dependency>
             <Dependency>qt5-multimedia</Dependency>
             <Dependency>xcb-util-image</Dependency>
-<!--             <Dependency>oxygen</Dependency> -->
             <Dependency>fluxbox</Dependency>
         </RuntimeDependencies>
         <Files>
@@ -68,115 +91,10 @@
             <Path fileType="data">/usr/share/lumina-desktop/fluxbox*</Path>
             <Path fileType="data">/usr/share/lumina-desktop/globs2</Path>
             <Path fileType="data">/usr/share/lumina-desktop/desktop-background.jpg</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-archiver</Name>
-        <RuntimeDependencies>
-            <Dependency>libgcc</Dependency>
-            <Dependency>qt5-svg</Dependency>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-archiver</Path>
-            <Path fileType="data">/usr/share/applications/lumina-archiver.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-archiver*</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-wallpapers</Name>
-        <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="data">/usr/share/wallpapers</Path>
-            <Path fileType="data">/usr/share/pixmaps</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-open</Name>
-        <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-open</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-open*</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-config</Name>
-        <RuntimeDependencies>
-            <Dependency>libxcb</Dependency>
-            <Dependency>qt5-x11extras</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-config</Path>
-            <Path fileType="data">/usr/share/applications/lumina-config.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-config*</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-fm</Name>
-        <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-fm</Path>
-            <Path fileType="data">/usr/share/applications/lumina-fm.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-fm*</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-screenshot</Name>
-        <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-screenshot</Path>
-            <Path fileType="data">/usr/share/applications/lumina-screenshot.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-screenshot*</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-search</Name>
-        <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-search</Path>
-            <Path fileType="data">/usr/share/applications/lumina-search.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-search*</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-info</Name>
-        <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-info</Path>
-            <Path fileType="data">/usr/share/applications/lumina-info.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-info*</Path>
-        </Files>
-    </Package>
-    
-    <Package>
-        <Name>lumina-xconfig</Name>
-        <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="executable">/usr/bin/lumina-xconfig</Path>
-            <Path fileType="data">/usr/share/applications/lumina-xconfig.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-xconfig*</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/lumina-desktop/syntax_rules</Path>
+            <Path fileType="man">/usr/man/man1/lumina-desktop.1.gz</Path>
+            <Path fileType="man">/usr/man/man8/start-lumina-desktop.8.gz</Path>
         </Files>
     </Package>
     
@@ -189,34 +107,151 @@
             <Path fileType="executable">/usr/bin/lumina-fileinfo</Path>
             <Path fileType="data">/usr/share/applications/lumina-fileinfo.desktop</Path>
             <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-fileinfo*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-fileinfo.1.gz</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>lumina-fm</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-fm</Path>
+            <Path fileType="data">/usr/share/applications/lumina-fm.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-fm*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-fm.1.gz</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>lumina-info</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-info</Path>
+            <Path fileType="data">/usr/share/applications/lumina-info.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-info*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-info.1.gz</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>lumina-mediaplayer</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-mediaplayer</Path>
+            <Path fileType="data">/usr/share/applications/lumina-mediaplayer*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-mediaplayer.1.gz</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-mediap*</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>lumina-open</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-open</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-open*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-open.1.gz</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>lumina-photo</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-photo</Path>
+            <Path fileType="man">/usr/man/man1/lumina-photo.1.gz</Path>
+            <Path fileType="data">/usr/share/applications/lumina-photo.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-photo*</Path>
+        </Files>
+    </Package>
+    
+    
+    
+    <Package>
+        <Name>lumina-screenshot</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-screenshot</Path>
+            <Path fileType="data">/usr/share/applications/lumina-screenshot.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-screenshot*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-screenshot.1.gz</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>lumina-search</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-search</Path>
+            <Path fileType="data">/usr/share/applications/lumina-search.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-search*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-search.1.gz</Path>
         </Files>
     </Package>
     
     <Package>
         <Name>lumina-textedit</Name>
         <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
+            <Dependency>lumina-desktop</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin/lumina-textedit</Path>
             <Path fileType="data">/usr/share/applications/lumina-textedit.desktop</Path>
             <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-te*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-textedit.1.gz</Path>
         </Files>
     </Package>
     
     <Package>
-        <Name>lumina-calculator</Name>
+        <Name>lumina-themeengine</Name>
         <RuntimeDependencies>
-            <Dependency>qt5-base</Dependency>
+            <Dependency>libXcursor</Dependency>
+            <Dependency>lumina-desktop</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="executable">/usr/bin/lumina-calculator</Path>
-            <Path fileType="data">/usr/share/applications/lumina-calculator.desktop</Path>
-            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/l-calc*</Path>
+            <Path fileType="executable">/usr/bin/lthemeengine*</Path>
+            <Path fileType="library">/usr/lib/qt5/plugins/platformthemes</Path>
+            <Path fileType="library">/usr/lib/qt5/plugins/styles</Path>
+            <Path fileType="data">/usr/share/lthemeengine</Path>
+            <Path fileType="data">/usr/share/applications/lthemeengine.desktop</Path>
         </Files>
     </Package>
     
+    <Package>
+        <Name>lumina-xconfig</Name>
+        <RuntimeDependencies>
+            <Dependency>lumina-desktop</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/lumina-xconfig</Path>
+            <Path fileType="data">/usr/share/applications/lumina-xconfig.desktop</Path>
+            <Path fileType="localdata">/usr/share/lumina-desktop/i18n/lumina-xconfig*</Path>
+            <Path fileType="man">/usr/man/man1/lumina-xconfig.1.gz</Path>
+        </Files>
+    </Package> 
+    
     <History>
+         <Update release="2">
+            <Date>2020-03-06</Date>
+            <Version>1.6.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
          <Update release="2">
             <Date>2019-07-13</Date>
             <Version>1.5.0</Version>
