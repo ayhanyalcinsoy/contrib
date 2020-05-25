@@ -4,15 +4,15 @@
 # Licensed under the GNU General Public License, version 3.
 # See the file https://www.gnu.org/licenses/gpl-3.0.txt
 
-from pisi.actionsapi import shelltools
+from pisi.actionsapi import mesontools
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
 def setup():
-	shelltools.system("meson --prefix=/usr \
-	\
-	-Ddocumentation=false \
-	-Dfifo=false \
+#	pisitools.dosed("doc/meson.build", "sphinx-build", "sphinx-build3")
+	pisitools.ldflags.add("-lbsd")
+	pisitools.cxxflags.add("-lbsd")
+	mesontools.configure("-Ddocumentation=false -Dfifo=false \
 	\
 	-Dtcp=true \
 	-Ddsd=true \
@@ -93,15 +93,13 @@ def setup():
 	-Dmpcdec=disabled \
 	-Dsidplay=disabled \
 	-Dsystemd=disabled \
-	-Dwildmidi=disabled \
-	\
-	. build")
+	-Dwildmidi=disabled")
 
 def build():
-	shelltools.system("ninja -C build")
+	mesontools.build()
 
 def install():
-	shelltools.system("DESTDIR=%s ninja -C build install" % get.installDIR())
+	mesontools.install()
 	pisitools.insinto("/etc", "doc/mpdconf.example", "mpd.conf")
 
 	pisitools.dodoc("AUTHORS", "COPYING", "NEWS", "README.md")
